@@ -1,5 +1,6 @@
 <?php
 session_start();
+/* proteção contra pessoas que não estão logado */
 if(!isset($_SESSION["usuario"])){
     header("Location: ../index.php");
     exit();
@@ -13,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $sql = "INSERT INTO usuarios (usuario,senha) 
     VALUES ('$novoUsuario','$novaSenha')";  
-
+    
     if($conn->query($sql) === TRUE){
         echo "<script> alert('Usuário cadastrado com sucesso!')</script>";
     }else{

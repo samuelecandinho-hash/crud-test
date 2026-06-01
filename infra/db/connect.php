@@ -1,5 +1,5 @@
 <?php
-
+ // compontente que cria uma conexão com o banco de dados 
     $host = "localhost";
     $user = "root";
     $pass = "root";
